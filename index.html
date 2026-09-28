@@ -6,10 +6,11 @@
   <title>Elenchus: independent red teaming for AI in games</title>
   <meta name="description" content="Elenchus is an independent AI red-teaming practice for games. We find the ways players can trick your AI characters, game masters and moderation before they do.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f3f2ee" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#07080b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#efebe1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121210" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/courier-prime-bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 
   <!-- Open Graph. Update the two URLs if the site moves to a custom domain (see README). -->
@@ -27,139 +28,137 @@
   <script src="site.js" defer></script>
 </head>
 <body>
-  <div class="backdrop" aria-hidden="true"></div>
+  <div class="sheet">
 
-  <header class="top">
-    <div class="wrap top-inner">
-      <a class="brand" href="#top" aria-label="Elenchus, back to top">Elenchus<span class="brand-tag">AI red team · games</span></a>
-      <nav class="nav" aria-label="Sections">
-        <a href="#scope">Scope</a>
-        <a href="#finding">Finding</a>
-        <a href="#pilots">Pilots</a>
-        <a class="nav-cta" href="#contact" data-contact>Contact</a>
-      </nav>
-    </div>
-  </header>
+    <header class="masthead">
+      <a class="wordmark" href="#top">Elenchus</a>
+      <dl class="fileinfo">
+        <div><dt>File</dt><dd>001</dd></div>
+        <div><dt>Subject</dt><dd>Player-facing AI</dd></div>
+        <div><dt>Status</dt><dd>Open for pilots</dd></div>
+      </dl>
+      <a class="masthead-contact" href="#contact" data-contact>Contact</a>
+    </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Adversarial testing for player-facing AI</p>
-          <h1>Independent red teaming for <em>AI in games.</em></h1>
+    <main id="top">
+      <section class="hero">
+        <h1>Independent red&nbsp;teaming for <mark>AI in games.</mark></h1>
+        <div class="hero-foot">
           <p class="lede">We find the ways players can trick your AI characters, game masters and moderation before they do.</p>
           <div class="actions">
-            <a class="button" href="#pilots" data-contact data-subject="Free pilot request">Request a free pilot <span aria-hidden="true">→</span></a>
-            <a class="button ghost" href="#finding">See an example finding</a>
+            <a class="btn" href="#pilots" data-contact data-subject="Free pilot request">Request a free pilot <span aria-hidden="true">→</span></a>
+            <a class="textlink" href="#finding">Read the example finding</a>
           </div>
-          <p class="meta">One founder <span aria-hidden="true">·</span> Vendor-independent</p>
         </div>
+        <p class="byline">One founder. Vendor-independent.</p>
+      </section>
 
-        <figure class="term" aria-label="Summary of an example test run on our own test NPC">
-          <div class="term-bar">
-            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span class="term-title">session · test-npc (ours, not a client)</span>
-          </div>
-          <div class="term-body">
-            <p class="ln full"><span class="pr">$</span> elenchus run --target shopkeeper --fresh-state</p>
-            <p class="ln"><span class="k">vector</span><span>text in the player's display name</span></p>
-            <p class="ln"><span class="k">configs</span><span>strong + low-cost model · strict + light prompt</span></p>
-            <p class="ln"><span class="k">result</span><span><span class="bad">NPC gave away gold</span> <b class="bad">40/40</b></span></p>
-            <p class="ln"><span class="k">vector</span><span>chat only · strong model</span></p>
-            <p class="ln"><span class="k">result</span><span class="ok">held</span></p>
-            <p class="ln full dim">└ lesson: what your AI trusts, and what it may do<span class="caret" aria-hidden="true"></span></p>
-          </div>
-        </figure>
-      </div>
-    </section>
-
-    <section id="scope">
-      <div class="wrap">
-        <header class="sec-head"><span class="idx">01</span><h2>What we test</h2></header>
-        <ul class="cards six">
-          <li><span class="tag">NPC</span>NPCs and companions</li>
-          <li><span class="tag">TEAM</span>AI teammates and opponents</li>
-          <li><span class="tag">GM</span>AI game masters and narrative</li>
-          <li><span class="tag">SUPPORT</span>Player-support agents</li>
-          <li><span class="tag">MOD</span>Text and voice moderation</li>
-          <li><span class="tag">UGC</span>UGC and creation tools</li>
+      <section id="scope" class="block">
+        <header class="block-head">
+          <span class="exhibit">Exhibit A</span>
+          <h2>What we test</h2>
+        </header>
+        <ul class="checklist">
+          <li>NPCs and companions</li>
+          <li>AI teammates and opponents</li>
+          <li>AI game masters and narrative</li>
+          <li>Player-support agents</li>
+          <li>Text and voice moderation</li>
+          <li>UGC and creation tools</li>
         </ul>
-      </div>
-    </section>
+      </section>
 
-    <section id="why">
-      <div class="wrap">
-        <header class="sec-head"><span class="idx">02</span><h2>Why games are different</h2></header>
-        <div class="cards three">
-          <article><h3>Economies</h3><p>An AI character that can hand out gold or items can be talked into handing them out.</p></article>
-          <article><h3>Minor safety</h3><p>T- and E-rated games put AI features in front of young players.</p></article>
-          <article><h3>In-world social engineering</h3><p>Players lie to characters in character, and the AI has only their word to go on.</p></article>
-        </div>
-        <aside class="field-note">
-          <span class="tag hot">Field note</span>
-          <p>This is already happening in shipped games. Players of <em>Where Winds Meet</em> tricked its AI NPCs into handing out quest rewards they had not earned.
-          <a href="https://www.gamespot.com/articles/where-winds-meet-players-figure-out-how-to-trick-npcs-into-giving-up-loot/1100-6536571/" rel="noopener">Source: GameSpot</a></p>
-        </aside>
-      </div>
-    </section>
-
-    <section id="finding">
-      <div class="wrap">
-        <header class="sec-head"><span class="idx">03</span><h2>Example finding</h2></header>
-        <p class="note">From our own test NPC, not a client.</p>
-        <div class="readout">
-          <div class="readout-num">
-            <span class="big">40<span class="slash">/</span>40</span>
-            <span class="cap">runs where the NPC gave away gold</span>
-            <div class="ticks" aria-hidden="true"></div>
-          </div>
-          <dl class="readout-rows">
-            <div><dt>Vector</dt><dd>Text in a player's display name</dd></div>
-            <div><dt>Configs</dt><dd>A strong and a low-cost model, each with strict and light prompts</dd></div>
-            <div><dt>Result</dt><dd><span class="bad">The shopkeeper NPC gave away gold in every run</span></dd></div>
-            <div><dt>Control</dt><dd><span class="ok">Attacks typed in chat held on the strong model</span></dd></div>
-          </dl>
-        </div>
-        <p class="lesson"><span class="tag">Lesson</span>What matters is what text your AI trusts and what it is allowed to do.</p>
-      </div>
-    </section>
-
-    <section id="deliverables">
-      <div class="wrap">
-        <header class="sec-head"><span class="idx">04</span><h2>What you get</h2></header>
-        <dl class="spec">
-          <div><dt>Severity</dt><dd>Every finding rated</dd></div>
-          <div><dt>Repro rate</dt><dd>From repeated runs, each from a fresh state</dd></div>
-          <div><dt>Evidence</dt><dd>For every finding</dd></div>
-          <div><dt>Fixes</dt><dd>Concrete, for each finding</dd></div>
-          <div><dt>Retest</dt><dd>Included, after you fix</dd></div>
-          <div><dt>Mapping</dt><dd>OWASP Top 10 for LLM Applications · MITRE ATLAS</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <section id="pilots">
-      <div class="wrap">
-        <div class="pilot">
-          <header class="sec-head"><span class="idx">05</span><h2>Free pilots</h2></header>
-          <p class="pilot-lede">A few free pilots for studios shipping AI features.</p>
-          <ol class="steps">
-            <li><span class="n">1</span>We test one feature, in a build you choose.</li>
-            <li><span class="n">2</span>Only with your written authorization.</li>
-            <li><span class="n">3</span>You get a short report.</li>
+      <section id="why" class="block">
+        <header class="block-head">
+          <span class="exhibit">Exhibit B</span>
+          <h2>Why games are different</h2>
+        </header>
+        <div class="why">
+          <ol class="clauses">
+            <li><h3>Economies</h3><p>An AI character that can hand out gold or items can be talked into handing them out.</p></li>
+            <li><h3>Minor safety</h3><p>T- and E-rated games put AI features in front of young players.</p></li>
+            <li><h3>In-world social engineering</h3><p>Players lie to characters in character, and the AI has only their word to go on.</p></li>
           </ol>
-          <a class="button" href="#contact" data-contact data-subject="Free pilot request">Request a free pilot <span aria-hidden="true">→</span></a>
+          <figure class="clipping">
+            <figcaption>Clipping · GameSpot</figcaption>
+            <p>Already happening in shipped games: players of <em>Where Winds Meet</em> tricked its AI NPCs into handing out quest rewards they had not earned.</p>
+            <a href="https://www.gamespot.com/articles/where-winds-meet-players-figure-out-how-to-trick-npcs-into-giving-up-loot/1100-6536571/" rel="noopener">Read the article</a>
+          </figure>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer id="contact">
-    <div class="wrap footer-inner">
-      <span class="brand small">Elenchus</span>
-      <a href="#contact" data-contact data-show-email>Email us</a>
-      <span class="muted">&copy; 2026 Elenchus</span>
-    </div>
-  </footer>
+      <section id="finding" class="block">
+        <header class="block-head">
+          <span class="exhibit">Exhibit C</span>
+          <h2>Example finding</h2>
+        </header>
+        <article class="record">
+          <p class="record-note">Our own test NPC. Not a client.</p>
+          <dl class="fields">
+            <div><dt>Target</dt><dd>Shopkeeper NPC with real gold and inventory</dd></div>
+            <div><dt>Vector</dt><dd>Text in the player's display name</dd></div>
+            <div><dt>Payload</dt><dd><span class="redact" title="Redacted. We don't publish attack payloads.">withheld from publication</span><span class="redact short" aria-hidden="true">x</span></dd></div>
+            <div><dt>Result</dt><dd><mark>The NPC gave away gold.</mark></dd></div>
+          </dl>
+          <div class="rate">
+            <div class="rate-num"><span>40</span><span class="of">/40</span></div>
+            <p class="rate-cap">runs, each from a fresh game state</p>
+            <table class="matrix">
+              <caption class="sr-only">Runs where the NPC gave away gold, per configuration</caption>
+              <thead><tr><th scope="col"></th><th scope="col">Strict prompt</th><th scope="col">Light prompt</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Strong model</th><td>10/10</td><td>10/10</td></tr>
+                <tr><th scope="row">Low-cost model</th><td>10/10</td><td>10/10</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="control">For comparison: attacks typed in chat <strong>held</strong> on the strong model.</p>
+          <span class="stamp" aria-hidden="true">Reproduced<br>40 / 40</span>
+        </article>
+        <p class="lesson">What matters is what text your AI trusts, and what it is allowed to do.</p>
+      </section>
+
+      <section id="deliverables" class="block">
+        <header class="block-head">
+          <span class="exhibit">Exhibit D</span>
+          <h2>What you get</h2>
+        </header>
+        <ol class="contents">
+          <li><span>Findings, each with a severity rating</span></li>
+          <li><span>Reproduction rate from repeated fresh-state runs</span></li>
+          <li><span>Evidence for every finding</span></li>
+          <li><span>Concrete fixes</span></li>
+          <li><span>Retest after you fix</span><em>included</em></li>
+        </ol>
+        <p class="mapping">Mapped to the OWASP Top 10 for LLM Applications and MITRE ATLAS.</p>
+      </section>
+
+      <section id="pilots" class="block">
+        <header class="block-head">
+          <span class="exhibit">Exhibit E</span>
+          <h2>Free pilots</h2>
+        </header>
+        <div class="form">
+          <p class="form-lede">A few free pilots for studios shipping AI features.</p>
+          <dl class="form-lines">
+            <div><dt>Scope</dt><dd>One feature</dd></div>
+            <div><dt>Build</dt><dd>Your choice</dd></div>
+            <div><dt>Authorization</dt><dd>In writing, before we start</dd></div>
+            <div><dt>You receive</dt><dd>A short report</dd></div>
+          </dl>
+          <a class="btn" href="#contact" data-contact data-subject="Free pilot request">Request a free pilot <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="endfile">
+      <p class="end">End of file</p>
+      <div class="foot">
+        <a href="#contact" data-contact data-show-email>Email us</a>
+        <span>&copy; 2026 Elenchus</span>
+      </div>
+    </footer>
+
+  </div>
 </body>
 </html>

@@ -6,11 +6,11 @@ no trackers or analytics, no third-party requests (the display font is bundled).
 | File | What it is |
 |---|---|
 | `index.html` | The page: all copy lives here |
-| `styles.css` | Styles, including dark mode (follows the visitor's system setting) |
+| `styles.css` | Styles: the "case file" look, plus a dark mode (a photocopy negative) that follows the visitor's system setting |
 | `site.js` | Holds the contact email and turns contact links into mailto links |
 | `favicon.svg` | Favicon |
 | `og-image.png` | 1200x630 preview image for link shares (Open Graph) |
-| `fonts/` | Instrument Serif (headings), self-hosted; licence in `fonts/OFL.txt`. Body text uses the system font, labels the system monospace |
+| `fonts/` | Self-hosted Anton (headlines) and Courier Prime (the Elenchus name and labels), both under the SIL Open Font License (`fonts/OFL-*.txt`). Body text uses the system font |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is |
 
 ## Change the contact email
