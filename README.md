@@ -1,13 +1,13 @@
 # elenchus-site
 
 One-page static site for Elenchus. Plain HTML and CSS, no build step, no frameworks,
-no trackers or analytics, no third-party requests (the display font is bundled).
+no trackers or analytics, no third-party requests (the fonts are bundled).
 
 | File | What it is |
 |---|---|
 | `index.html` | The page: all copy lives here |
-| `styles.css` | Styles: the "case file" look, plus a dark mode (a photocopy negative) that follows the visitor's system setting |
-| `site.js` | Holds the contact email and turns contact links into mailto links |
+| `styles.css` | Styles: the "case file" look, plus a graphite-grey dark mode that follows the visitor's system setting |
+| `site.js` | Holds the contact email (turns contact links into mailto links) and runs the hero transcript replay |
 | `favicon.svg` | Favicon |
 | `og-image.png` | 1200x630 preview image for link shares (Open Graph) |
 | `fonts/` | Self-hosted Anton (headlines) and Courier Prime (the Elenchus name and labels), both under the SIL Open Font License (`fonts/OFL-*.txt`). Body text uses the system font |
