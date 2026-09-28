@@ -298,24 +298,29 @@ h1 mark {
   .dots i, .js .replay .msg.tool.on, .js .replay.done .changed { animation: none; }
 }
 
-/* Redaction bars: click (or tap) to see why they are redacted */
-details.why { display: inline-block; position: relative; vertical-align: -0.12em; }
-details.why > summary { list-style: none; cursor: pointer; }
-details.why > summary::-webkit-details-marker { display: none; }
-details.why > summary.redact {
-  height: 1.1rem; vertical-align: top; font-family: var(--type); font-size: 0.68rem; line-height: 1.1rem; text-align: center;
-  letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.15s ease;
+/* Redaction bars: click (or tap) for a pop-up note explaining why */
+button.redact.why {
+  border: 0; padding: 0; margin: 0; cursor: pointer; appearance: none;
+  height: 1.1rem; vertical-align: -0.2em; font-family: var(--type); font-size: 0.64rem; line-height: 1.1rem;
+  letter-spacing: 0.1em; text-transform: uppercase; text-align: center; transition: color 0.15s ease;
 }
-details.why > summary.redact:hover, details.why > summary.redact:focus-visible, details.why[open] > summary.redact { color: var(--paper); }
-.replay details.why > summary.redact:hover, .replay details.why > summary.redact:focus-visible, .replay details.why[open] > summary.redact { color: var(--term); }
-.why-pop {
-  position: absolute; left: 0; top: calc(100% + 0.45rem); z-index: 5; width: 19rem; margin: 0;
-  background: var(--paper); color: var(--ink); border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--marker);
-  padding: 0.6rem 0.75rem; font-family: var(--sans); font-size: 0.8rem; line-height: 1.45; text-transform: none; letter-spacing: 0;
+button.redact.why:hover, button.redact.why:focus-visible, button.redact.why[aria-expanded="true"] { color: var(--paper); }
+.replay button.redact.why:hover, .replay button.redact.why:focus-visible, .replay button.redact.why[aria-expanded="true"] { color: var(--term); }
+
+/* The note itself floats above the page (positioned by site.js), so nothing shifts. */
+.note-pop {
+  position: absolute; z-index: 50; width: max-content; max-width: min(16rem, calc(100vw - 1.5rem));
+  background: var(--marker); color: #2c2c2e; font-family: var(--type); font-size: 0.78rem; line-height: 1.4;
+  padding: 0.6rem 0.75rem; box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.22);
+  transform: rotate(-1deg); transform-origin: var(--arrow-x, 50%) 100%;
+  animation: note-in 0.16s ease-out;
 }
-.replay .why-pop { left: auto; right: 0; }
-@media (max-width: 600px) {
-  details.why { position: static; }
-  .fields div, .replay-name { position: relative; }
-  .why-pop, .replay .why-pop { left: 0; right: 0; width: auto; top: calc(100% - 0.2rem); }
+.note-pop::after {
+  content: ""; position: absolute; left: var(--arrow-x, 50%); bottom: -7px; margin-left: -7px;
+  border: 7px solid transparent; border-bottom: 0; border-top-color: var(--marker);
 }
+.note-pop.below { transform-origin: var(--arrow-x, 50%) 0; }
+.note-pop.below::after { bottom: auto; top: -7px; border-top: 0; border-top-color: transparent; border-bottom: 7px solid var(--marker); }
+@keyframes note-in { from { opacity: 0; transform: rotate(-1deg) scale(0.85); } to { opacity: 1; transform: rotate(-1deg) scale(1); } }
+@media (prefers-reduced-motion: reduce) { .note-pop { animation: none; } }
+.fields .redact.short { height: 1.1rem; vertical-align: -0.2em; }
