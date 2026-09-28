@@ -1,9 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <style>
-    rect { fill: #8a2c1d; }
-    text { fill: #ffffff; }
-    @media (prefers-color-scheme: dark) { rect { fill: #e0826f; } text { fill: #16171a; } }
-  </style>
-  <rect width="64" height="64" rx="12"/>
-  <text x="32" y="47" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="44" font-weight="700">E</text>
+  <rect width="64" height="64" rx="14" fill="#0b0d12"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#ff5a36" stroke-opacity="0.55" stroke-width="3"/>
+  <text x="32" y="48" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-style="italic" fill="#ff5a36">E</text>
 </svg>

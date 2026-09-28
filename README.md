@@ -1,7 +1,7 @@
 # elenchus-site
 
 One-page static site for Elenchus. Plain HTML and CSS, no build step, no frameworks,
-no trackers or analytics, no third-party requests.
+no trackers or analytics, no third-party requests (the display font is bundled).
 
 | File | What it is |
 |---|---|
@@ -10,6 +10,7 @@ no trackers or analytics, no third-party requests.
 | `site.js` | Holds the contact email and turns contact links into mailto links |
 | `favicon.svg` | Favicon |
 | `og-image.png` | 1200x630 preview image for link shares (Open Graph) |
+| `fonts/` | Instrument Serif (headings), self-hosted; licence in `fonts/OFL.txt`. Body text uses the system font, labels the system monospace |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is |
 
 ## Change the contact email
