@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elenchus: independent red teaming for AI in games</title>
+  <meta name="description" content="Elenchus is an independent AI red-teaming practice for games. We find the ways players can trick your AI characters, game masters and moderation before they do.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16171a" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Open Graph. Update the two URLs if the site moves to a custom domain (see README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Elenchus">
+  <meta property="og:title" content="Elenchus: independent red teaming for AI in games">
+  <meta property="og:description" content="We find the ways players can trick your AI characters, game masters and moderation before they do.">
+  <meta property="og:url" content="https://lufifraca.github.io/elenchus-site/">
+  <meta property="og:image" content="https://lufifraca.github.io/elenchus-site/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elenchus: independent red teaming for AI in games">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#">Elenchus</a>
+      <a class="top-link" href="#contact" data-contact>Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>Independent red teaming for AI in games.</h1>
+        <p class="lede">We find the ways players can trick your AI characters, game masters and moderation before they do.</p>
+        <a class="button" href="#pilots" data-contact data-subject="Free pilot request">Request a free pilot</a>
+        <p class="meta">One founder. Vendor-independent.</p>
+      </div>
+    </section>
+
+    <section id="test">
+      <div class="wrap">
+        <h2>What we test</h2>
+        <ul class="grid">
+          <li>NPCs and companions</li>
+          <li>AI teammates and opponents</li>
+          <li>AI game masters and narrative</li>
+          <li>Player-support agents</li>
+          <li>Text and voice moderation</li>
+          <li>UGC and creation tools</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <h2>Why games are different</h2>
+        <ul class="plain">
+          <li><strong>Economies.</strong> An AI character that can hand out gold or items can be talked into handing them out.</li>
+          <li><strong>Minor safety.</strong> T- and E-rated games put AI features in front of young players.</li>
+          <li><strong>In-world social engineering.</strong> Players lie to characters in character, and the AI has only their word to go on.</li>
+        </ul>
+        <p>This is already happening in shipped games. Players of <em>Where Winds Meet</em> tricked its AI NPCs into handing out quest rewards they had not earned.</p>
+      </div>
+    </section>
+
+    <section id="example">
+      <div class="wrap">
+        <h2>Example finding</h2>
+        <p class="note">From our own test NPC, not a client.</p>
+        <div class="card">
+          <p>Text in a player's display name made a shopkeeper NPC give away gold in <strong>40 of 40</strong> runs, on both a strong and a low-cost model, with strict and light prompts.</p>
+          <p>Attacks typed in chat held on the strong model.</p>
+        </div>
+        <p><strong>The lesson:</strong> what matters is what text your AI trusts and what it is allowed to do.</p>
+      </div>
+    </section>
+
+    <section id="deliverables">
+      <div class="wrap">
+        <h2>What you get</h2>
+        <ul class="plain">
+          <li>Findings with a severity rating.</li>
+          <li>A reproduction rate from repeated runs, each from a fresh state.</li>
+          <li>Evidence for every finding.</li>
+          <li>Concrete fixes.</li>
+          <li>A retest after you fix, included.</li>
+        </ul>
+        <p>Findings are mapped to the OWASP Top 10 for LLM Applications and MITRE ATLAS.</p>
+      </div>
+    </section>
+
+    <section id="pilots">
+      <div class="wrap">
+        <h2>Free pilots</h2>
+        <p>We are running a few free pilots for studios shipping AI features. We test one feature, in a build you choose, with your written authorization. You get a short report.</p>
+        <a class="button" href="#contact" data-contact data-subject="Free pilot request">Request a free pilot</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap footer-inner">
+      <a href="#contact" data-contact data-show-email>Email us</a>
+      <span>&copy; 2026 Elenchus</span>
+    </div>
+  </footer>
+</body>
+</html>
