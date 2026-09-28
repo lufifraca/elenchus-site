@@ -297,3 +297,7 @@ h1 mark {
 @media (prefers-reduced-motion: reduce) {
   .dots i, .js .replay .msg.tool.on, .js .replay.done .changed { animation: none; }
 }
+
+/* Visible reason for the redaction bars */
+.redact-note { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55; margin-left: 0.35rem; }
+.redact-why { display: block; margin-top: 0.4rem; font-family: var(--type); font-size: 0.75rem; color: var(--faint); }
