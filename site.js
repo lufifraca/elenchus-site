@@ -57,3 +57,8 @@ document.querySelectorAll("[data-contact]").forEach((a) => {
     if (entries[0].isIntersecting) { obs.disconnect(); play(); }
   }, { threshold: 0.4 }).observe(box);
 })();
+
+// Close an open "why redacted?" note when clicking anywhere else.
+document.addEventListener("click", (e) => {
+  document.querySelectorAll("details.why[open]").forEach((d) => { if (!d.contains(e.target)) d.open = false; });
+});

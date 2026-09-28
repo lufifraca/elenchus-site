@@ -298,6 +298,24 @@ h1 mark {
   .dots i, .js .replay .msg.tool.on, .js .replay.done .changed { animation: none; }
 }
 
-/* Visible reason for the redaction bars */
-.redact-note { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55; margin-left: 0.35rem; }
-.redact-why { display: block; margin-top: 0.4rem; font-family: var(--type); font-size: 0.75rem; color: var(--faint); }
+/* Redaction bars: click (or tap) to see why they are redacted */
+details.why { display: inline-block; position: relative; vertical-align: -0.12em; }
+details.why > summary { list-style: none; cursor: pointer; }
+details.why > summary::-webkit-details-marker { display: none; }
+details.why > summary.redact {
+  height: 1.1rem; vertical-align: top; font-family: var(--type); font-size: 0.68rem; line-height: 1.1rem; text-align: center;
+  letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.15s ease;
+}
+details.why > summary.redact:hover, details.why > summary.redact:focus-visible, details.why[open] > summary.redact { color: var(--paper); }
+.replay details.why > summary.redact:hover, .replay details.why > summary.redact:focus-visible, .replay details.why[open] > summary.redact { color: var(--term); }
+.why-pop {
+  position: absolute; left: 0; top: calc(100% + 0.45rem); z-index: 5; width: 19rem; margin: 0;
+  background: var(--paper); color: var(--ink); border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--marker);
+  padding: 0.6rem 0.75rem; font-family: var(--sans); font-size: 0.8rem; line-height: 1.45; text-transform: none; letter-spacing: 0;
+}
+.replay .why-pop { left: auto; right: 0; }
+@media (max-width: 600px) {
+  details.why { position: static; }
+  .fields div, .replay-name { position: relative; }
+  .why-pop, .replay .why-pop { left: 0; right: 0; width: auto; top: calc(100% - 0.2rem); }
+}
