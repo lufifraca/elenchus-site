@@ -19,6 +19,7 @@
   --btn-ink: #efebe1;
   --term: #3a3b3f;             /* transcript card */
   --term-ink: #ecebe6;
+  --logo-accent: #A8702A;      /* from the Elenchus logo */
 
   --display: "Anton", "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif;
   --type: "Courier Prime", "Courier New", Courier, monospace;
@@ -43,6 +44,7 @@
     --btn-ink: #2b2c2f;
     --term: #202124;
     --term-ink: #ecebe6;
+    --logo-accent: #D49B4C;
   }
 }
 
@@ -323,4 +325,16 @@ button.redact.why:hover, button.redact.why:focus-visible, button.redact.why[aria
 .note-pop.below::after { bottom: auto; top: -7px; border-top: 0; border-top-color: transparent; border-bottom: 7px solid var(--marker); }
 @keyframes note-in { from { opacity: 0; transform: rotate(-1deg) scale(0.85); } to { opacity: 1; transform: rotate(-1deg) scale(1); } }
 @media (prefers-reduced-motion: reduce) { .note-pop { animation: none; } }
-.fields .redact.short { height: 1.1rem; vertical-align: -0.2em; }
+/* Payload row: both bars on one centred line, so they can never drift apart */
+.fields dd:has(> .redact) { display: flex; align-items: center; gap: 0.5rem; }
+.fields dd > .redact { margin: 0; vertical-align: baseline; height: 1.1rem; }
+.fields dd > button.redact.why { flex: 0 1 22rem; width: auto; min-width: 9.5rem; }
+.fields dd > .redact.short { flex: none; width: 4.5rem; }
+@media (max-width: 480px) { .fields dd > .redact.short { width: 2.5rem; } }
+
+/* ---------- Logo mark ---------- */
+.mark { display: inline-block; width: auto; height: 1.1em; flex: none; }
+.mark-bar { fill: var(--logo-accent); }
+.wordmark { display: inline-flex; align-items: center; gap: 0.5rem; }
+.wordmark .mark { height: 1.15em; }
+.end-mark .mark { height: 1.1rem; vertical-align: -0.15em; margin-right: 0.6rem; color: var(--faint); }

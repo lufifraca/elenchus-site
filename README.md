@@ -8,7 +8,8 @@ no trackers or analytics, no third-party requests (the fonts are bundled).
 | `index.html` | The page: all copy lives here |
 | `styles.css` | Styles: the "case file" look, plus a graphite-grey dark mode that follows the visitor's system setting |
 | `site.js` | Holds the contact email (turns contact links into mailto links) and runs the hero transcript replay |
-| `favicon.svg` | Favicon |
+| `favicon.svg` | Favicon (the Elenchus icon) |
+| `brand/` | Logo files: mark and icon SVGs (light and dark), PNG icons at 16–512 px. The 16/32 PNGs are fallback favicons and the 180 px one is the iOS home-screen icon. The mark is also inlined in the header and footer of `index.html` |
 | `og-image.png` | 1200x630 preview image for link shares (Open Graph) |
 | `fonts/` | Self-hosted Anton (headlines) and Courier Prime (the Elenchus name and labels), both under the SIL Open Font License (`fonts/OFL-*.txt`). Body text uses the system font |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is |
