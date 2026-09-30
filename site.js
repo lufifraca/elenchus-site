@@ -100,3 +100,20 @@ document.querySelectorAll("[data-contact]").forEach((a) => {
   // The note is anchored in page coordinates, so it scrolls with the bar; on resize, re-place it.
   window.addEventListener("resize", () => { if (current) open(current); });
 })();
+
+// Desktop section rail: highlight the section currently in view.
+(function () {
+  const links = [...document.querySelectorAll(".rail a[data-rail]")];
+  if (!links.length) return;
+  const byId = new Map(links.map((a) => [a.getAttribute("href").slice(1), a]));
+  const sections = [...byId.keys()].map((id) => document.getElementById(id)).filter(Boolean);
+  if (!sections.length) return;
+  const setActive = (id) => links.forEach((a) => a.classList.toggle("on", a === byId.get(id)));
+  const io = new IntersectionObserver((entries) => {
+    const vis = entries.filter((e) => e.isIntersecting);
+    if (!vis.length) return;
+    vis.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    setActive(vis[0].target.id);
+  }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+  sections.forEach((s) => io.observe(s));
+})();
