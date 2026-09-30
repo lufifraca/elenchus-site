@@ -42,10 +42,6 @@ links jump to the footer rather than open their mail app.
 Pushing to `main` redeploys; there is nothing to build. The `og:url` and `og:image` tags in
 `index.html` already point at `https://exetast.com/`.
 
-> Note: the GitHub repo is still named `elenchus-site`. With the custom domain that doesn't
-> affect the public URL, so renaming it is optional. If you do rename it on GitHub, nothing in
-> these files needs to change.
-
 ## Content rules
 
 Keep claims to what the page already says: no client names, logos, testimonials or
