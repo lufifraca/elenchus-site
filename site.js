@@ -1,5 +1,5 @@
 // The one place to change the contact email.
-const CONTACT_EMAIL = "hello@example.com";
+const CONTACT_EMAIL = "luca@exetast.com";
 
 // Every element with data-contact becomes a mailto link to CONTACT_EMAIL.
 // data-subject adds a subject line; data-show-email shows the address as the link text.
