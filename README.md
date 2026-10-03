@@ -1,17 +1,18 @@
 # exetast-site
 
-One-page static site for Exetast, served at **exetast.com**. Plain HTML and CSS, no build
+Static site for Exetast, served at **exetast.com**: a one-page homepage plus the playable demo at `/demo/`. Plain HTML and CSS, no build
 step, no frameworks, no trackers or analytics, no third-party requests (the fonts are bundled).
 
 | File | What it is |
 |---|---|
-| `index.html` | The page: all copy lives here |
-| `styles.css` | Styles: the "case file" look, plus a graphite-grey dark mode that follows the visitor's system setting |
-| `site.js` | Holds the contact email (turns contact links into mailto links) and runs the hero transcript replay |
+| `index.html` | The homepage: all its copy lives here |
+| `demo/index.html` | "Break the Shopkeeper": replays of three recorded test runs against our demo NPC. Self-contained (its own styles and script); attack wording is withheld |
+| `styles.css` | Homepage styles: paper/charcoal palette, the desktop section rail, and a graphite-grey dark mode that follows the visitor's system setting |
+| `site.js` | Holds the contact email (turns contact links into mailto links), runs the transcript replay in "What we found", the "why redacted?" note, and the section rail highlight |
 | `favicon.svg` | Favicon (the Exetast "E" mark) |
 | `brand/` | Logo files: `exetast-mark`/`exetast-icon` SVGs (light and dark), PNG icons at 16–512 px. The 16/32 PNGs are fallback favicons and the 180 px one is the iOS home-screen icon. The mark is also inlined in the header and footer of `index.html` |
 | `og-image.png` | 1200x630 preview image for link shares (Open Graph) |
-| `fonts/` | Self-hosted Anton (headlines) and Courier Prime (the Exetast name and labels), both under the SIL Open Font License (`fonts/OFL-*.txt`). Body text uses the system font |
+| `fonts/` | Self-hosted fonts, all under the SIL Open Font License (`fonts/OFL-*.txt`). Homepage: Anton (headlines) and Courier Prime (the Exetast name and labels); body text uses the system font. Demo: Pixelify Sans, Marcellus, IBM Plex Sans and IBM Plex Mono (Latin subsets) |
 | `CNAME` | The custom domain (`exetast.com`) for GitHub Pages |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is |
 
@@ -44,5 +45,7 @@ Pushing to `main` redeploys; there is nothing to build. The `og:url` and `og:ima
 
 ## Content rules
 
-Keep claims to what the page already says: no client names, logos, testimonials or
-statistics beyond our own test results, and never publish attack payload text.
+Keep claims to what the evidence in the main repo supports: no client names, logos,
+testimonials or statistics beyond our own test results; a success rate only when it comes from
+repeated fresh-state runs; severities as accepted in the findings summary; and never publish
+attack payload text.
